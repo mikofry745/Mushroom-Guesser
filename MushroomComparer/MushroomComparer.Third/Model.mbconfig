@@ -1,0 +1,66 @@
+﻿{
+  "Scenario": "ImageClassification",
+  "DataSource": {
+    "Type": "Folder",
+    "Version": 1,
+    "FolderPath": "C:\\Users\\mikol\\Desktop\\MushroomData\\Data_I3\\LearnData"
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 3,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "ImageClassificationMulti",
+        "Score": 0.81626434902015144,
+        "RuntimeInSeconds": 445.171,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2",
+          "e0": {
+            "OutputColumnName": "Label",
+            "InputColumnName": "Label",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e1": {
+            "LabelColumnName": "Label",
+            "ScoreColumnName": "Score",
+            "FeatureColumnName": "ImageSource",
+            "Arch": "ResnetV250",
+            "BatchSize": 10,
+            "Epoch": 200
+          },
+          "e2": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          }
+        }
+      }
+    ],
+    "Estimators": {
+      "e0": "MapValueToKey",
+      "e1": "ImageClassificationMulti",
+      "e2": "MapKeyToValue"
+    },
+    "Schema": "e0 * e1 * e2",
+    "MetricName": "MacroAccuracy",
+    "ModelFilePath": "C:\\Szkoła\\AI\\MushroomComparer\\MushroomComparer.Third\\Model.mlnet"
+  },
+  "Type": "TrainingConfig",
+  "Version": 4,
+  "TrainingOption": {
+    "Version": 1,
+    "Type": "ClassificationTrainingOption",
+    "TrainingTime": 2147483647,
+    "OptimizeMetric": "MacroAccuracy",
+    "ValidationOption": {
+      "Version": 0,
+      "Type": "TrainValidateSplitValidationOption",
+      "SplitRatio": 0.2
+    }
+  }
+}
