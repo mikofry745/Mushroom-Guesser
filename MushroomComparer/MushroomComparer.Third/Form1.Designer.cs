@@ -149,18 +149,18 @@
             label2.AutoSize = true;
             label2.Location = new Point(674, 132);
             label2.Name = "label2";
-            label2.Size = new Size(51, 20);
+            label2.Size = new Size(83, 20);
             label2.TabIndex = 12;
-            label2.Text = "Edible";
+            label2.Text = "Non Edible";
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Location = new Point(674, 162);
             label3.Name = "label3";
-            label3.Size = new Size(83, 20);
+            label3.Size = new Size(51, 20);
             label3.TabIndex = 13;
-            label3.Text = "Non Edible";
+            label3.Text = "Edible";
             // 
             // Form1
             // 
